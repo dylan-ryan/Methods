@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,18 +9,27 @@ namespace Methods
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static int health;
+        static string name;
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            health = 100;
+            name = "dylan";
 
-            Dylan();
+            ShowHud();
 
             Console.ReadKey(true);
         }
-
-        static void Dylan()
+        static void TakeDamage(int hp)
         {
-            Console.WriteLine("Dylan"); 
+            health = health - hp;
+        }
+
+        static void ShowHud()
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(health);
         }
     }
+
 }
